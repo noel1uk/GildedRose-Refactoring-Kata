@@ -6,6 +6,7 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
+      type_checker(item)
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
           if item.name != "Sulfuras, Hand of Ragnaros"
@@ -51,4 +52,22 @@ class GildedRose
       end
     end
   end
+
+  def type_checker(item)
+    if item.name == 'Aged Brie'
+      #run this code
+      p item.name
+    elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
+      #run this code
+      p item.name
+    elsif item.name == 'Sulfuras, Hand of Ragnaros'
+      #run this code
+      p item.name
+    else
+      #run this code
+      p item.name
+    end
+  end
 end
+
+# class ItemChecker
