@@ -85,12 +85,12 @@ describe GildedRose do
         end
       end
       context 'sell_in is 11 or higher' do
-        it 'increases quality by 1 when quality is 48' do
+        it 'increases quality by 1 when quality is 40' do
           items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 11, 40)]
           GildedRose.new(items).update_quality()
           expect(items[0].quality).to eq 41
         end
-        it "doesn't increas quality by 1 when quality is 50" do
+        it "doesn't increase quality by 1 when quality is 50" do
           items = [Item.new('Backstage passes to a TAFKAL80ETC concert', 11, 50)]
           GildedRose.new(items).update_quality()
           expect(items[0].quality).to eq 50
