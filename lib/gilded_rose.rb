@@ -1,21 +1,17 @@
+require 'type_checker'
+
 class GildedRose
 
   def initialize(items)
     @items = items
-    @is_legendary_item = false
-    @is_cheese = false
-    @is_ticket = false
   end
 
   def update_quality()
     @items.each do |item|
-      @is_legendary_item = false
-      @is_cheese = false
-      @is_ticket = false
-      type_checker(item)
-      if @is_legendary_item
+      type = TypeChecker.new(item.name)
+      if type.check == 'legendary'
         next
-      elsif @is_cheese
+      elsif type.check == 'cheese'
         if item.quality < 50
           item.quality = item.quality + 1
         end
@@ -23,7 +19,7 @@ class GildedRose
           item.quality = item.quality + 1
         end
         item.sell_in = item.sell_in - 1
-      elsif @is_ticket
+      elsif type.check == 'ticket'
         if item.quality < 50
           item.quality = item.quality + 1
         end
@@ -50,17 +46,6 @@ class GildedRose
         end
       item.sell_in = item.sell_in - 1
       end
-    end
-  end
-
-  def type_checker(item)
-    if item.name == 'Aged Brie'
-      @is_cheese = true
-    elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
-      @is_ticket = true
-    elsif item.name == 'Sulfuras, Hand of Ragnaros'
-      @is_legendary_item = true
-    else
     end
   end
 end
