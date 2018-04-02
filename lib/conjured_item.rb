@@ -7,6 +7,8 @@ class ConjuredItem
   def update_item()
     if @item.sell_in > -1
       @item.quality -= 2
+    else
+      @item.quality -= 4
     end
     # if @item.sell_in < 0 && @item.quality > 1
     #     @item.quality = @item.quality - 2
