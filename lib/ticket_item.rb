@@ -1,4 +1,4 @@
-class Ticket
+class TicketItem
 
   def initialize(item)
     @item = item

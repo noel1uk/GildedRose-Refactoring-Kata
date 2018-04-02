@@ -13,11 +13,11 @@ class GildedRose
     @items.each do |item|
       type = TypeChecker.new(item.name)
       if type.check == 'legendary'
-        Legendary.new(item)
+        LegendaryItem.new(item)
       elsif type.check == 'cheese'
-        Cheese.new(item).update_item()
+        CheeseItem.new(item).update_item()
       elsif type.check == 'ticket'
-        Ticket.new(item).update_item()
+        TicketItem.new(item).update_item()
       else
         if item.sell_in < 0 && item.quality > 1
             item.quality = item.quality - 2

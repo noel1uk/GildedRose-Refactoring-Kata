@@ -1,4 +1,4 @@
-class Legendary
+class LegendaryItem
 
   def initialize(item)
     @item = item

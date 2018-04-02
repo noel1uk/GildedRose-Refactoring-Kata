@@ -1,4 +1,4 @@
-class Cheese
+class CheeseItem
 
   def initialize(item)
     @item = item
