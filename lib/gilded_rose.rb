@@ -1,7 +1,7 @@
 require_relative 'type_checker'
-require_relative 'legendary'
-require_relative 'cheese'
-require_relative 'ticket'
+require_relative 'legendary_item'
+require_relative 'cheese_item'
+require_relative 'ticket_item'
 
 class GildedRose
 
