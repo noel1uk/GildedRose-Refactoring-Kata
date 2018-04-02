@@ -14,6 +14,16 @@ describe GildedRose do
         GildedRose.new(items).update_quality()
         expect(items[0].quality).to eq 0
       end
+      it 'reduces quality by 2 if sell_in < 0' do
+        items = [Item.new('foo', -1, 2)]
+        GildedRose.new(items).update_quality()
+        expect(items[0].quality). to eq 0
+      end
+      it 'reduces quality by 1 if sell_in < 0 and item quality is 1' do
+        items = [Item.new('foo', -1, 0)]
+        GildedRose.new(items).update_quality()
+        expect(items[0].quality). to eq 0
+      end
     end
     context 'item is Sulfuras, Hand of Ragnaros' do
       it 'does not reduce in quality' do
