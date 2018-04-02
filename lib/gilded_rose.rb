@@ -1,4 +1,5 @@
-require 'type_checker'
+require_relative 'type_checker'
+require_relative 'legendary'
 
 class GildedRose
 
@@ -10,7 +11,7 @@ class GildedRose
     @items.each do |item|
       type = TypeChecker.new(item.name)
       if type.check == 'legendary'
-        next
+        Legendary.new(item)
       elsif type.check == 'cheese'
         if item.quality < 50
           item.quality = item.quality + 1
