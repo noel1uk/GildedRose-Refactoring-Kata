@@ -1,5 +1,6 @@
 require_relative 'type_checker'
 require_relative 'legendary'
+require_relative 'cheese'
 
 class GildedRose
 
@@ -13,13 +14,7 @@ class GildedRose
       if type.check == 'legendary'
         Legendary.new(item)
       elsif type.check == 'cheese'
-        if item.quality < 50
-          item.quality = item.quality + 1
-        end
-        if item.quality < 50
-          item.quality = item.quality + 1
-        end
-        item.sell_in = item.sell_in - 1
+        Cheese.new(item).update_item()
       elsif type.check == 'ticket'
         if item.quality < 50
           item.quality = item.quality + 1
