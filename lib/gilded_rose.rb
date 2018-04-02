@@ -3,6 +3,7 @@ require_relative 'legendary_item'
 require_relative 'cheese_item'
 require_relative 'ticket_item'
 require_relative 'normal_item'
+require_relative 'conjured_item'
 
 class GildedRose
 
@@ -19,6 +20,8 @@ class GildedRose
         CheeseItem.new(item).update_item()
       elsif type.check == 'ticket'
         TicketItem.new(item).update_item()
+      elsif type.check == 'conjured'
+        ConjuredItem.new(item).update_item()
       else
         NormalItem.new(item).update_item()
       end

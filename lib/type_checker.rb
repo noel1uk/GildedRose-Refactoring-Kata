@@ -13,6 +13,8 @@ class TypeChecker
       'ticket'
     elsif @item_name == 'Sulfuras, Hand of Ragnaros'
       'legendary'
+    elsif @item_name.split.first == 'Conjured'
+      'conjured'
     else
       'normal'
     end
