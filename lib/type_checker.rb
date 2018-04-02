@@ -1,18 +1,20 @@
 class TypeChecker
+  attr_accessor :type
 
-  def initialize(name)
-    @name = name
+  def initialize(item_name)
+    @item_name = item_name
 
   end
 
-  def check_type()
-    if item.name == 'Aged Brie'
+  def check()
+    if @item_name == 'Aged Brie'
       'cheese'
-    elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
+    elsif @item_name == 'Backstage passes to a TAFKAL80ETC concert'
       'ticket'
-    elsif item.name == 'Sulfuras, Hand of Ragnaros'
+    elsif @item_name == 'Sulfuras, Hand of Ragnaros'
       'legendary'
     else
       'normal'
     end
   end
+end
