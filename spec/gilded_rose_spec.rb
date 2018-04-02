@@ -129,10 +129,19 @@ describe GildedRose do
       end
     end
     describe 'ConjuredItem' do
-      it "reduces quality by 2" do
-        items = [Item.new('Conjured Mana Cake', 2, 4)]
-        GildedRose.new(items).update_quality()
-        expect(items[0].quality).to eq 2
+      context 'sell_in is 0' do
+        it "reduces quality by 2" do
+          items = [Item.new('Conjured Mana Cake', 0, 4)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 2
+        end
+      end
+      context 'sell_in is -1' do
+        it "reduces quality by 4" do
+          items = [Item.new('Conjured Mana Cake', -1, 4)]
+          GildedRose.new(items).update_quality()
+          expect(items[0].quality).to eq 0
+        end
       end
     end
   end
