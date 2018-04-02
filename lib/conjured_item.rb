@@ -10,6 +10,7 @@ class ConjuredItem
     else
       @item.quality -= 4
     end
+    @item.sell_in = @item.sell_in - 1
     # if @item.sell_in < 0 && @item.quality > 1
     #     @item.quality = @item.quality - 2
     # elsif @item.quality > 0
